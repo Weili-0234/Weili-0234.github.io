@@ -35,9 +35,9 @@ I am a sophomore student in Computer Engineering, pursuing a dual degree from <a
 I was fortunate to work on Efficient Long Video Understanding with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a href="https://espere-1119-song.github.io">Enxin Song</a>. We built AuroraLong, a RWKV-based hybrid model that handles hour-long videos on a single consumer GPU while surpassing previous SOTA on multiple video understanding benchmarks such as <a href="https://github.com/JUNJIE99/MLVU">MLVU</a>, <a href="https://github.com/rese1f/MovieChat">MovieChat-1k</a>, and <a href="https://rese1f.github.io/aurora-web">VDC</a>. Our paper is under review for CVPR 2025.
 
 I'm currently interested in various aspects of machine learning and computer systems: 
-- Improving efficiency of ML algorithms with hardware-awareness
-- Accelerating large-scale training and inference
-- Efficient modeling of multi-modal long-context (video, audio, text, etc.)
+- Hardware-aware efficient algorithms
+- Dynamic sparsity for training and inference acceleration 
+- Applications of multi-modal long-context (video, audio, text, etc.) modeling 
 <!-- TODO: state my research interests -->
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
