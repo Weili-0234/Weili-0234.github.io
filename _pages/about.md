@@ -32,7 +32,7 @@ Check out my CV <a href="https://www.google.com">here</a>
 
 I am a sophomore in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
 
-I am fortunate to work on Efficient Long Video Understanding with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a href="https://espere-1119-song.github.io">Enxin Song</a>. We built AuroraLong, a hybrid MLLM that handles hour-long videos on a single consumer GPU while surpassing previous SOTA on multiple video understanding benchmarks such as <a href="https://github.com/JUNJIE99/MLVU">MLVU</a>, <a href="https://github.com/rese1f/MovieChat">MovieChat-1k</a> and <a href="https://rese1f.github.io/aurora-web">VDC</a>. Our paper is under review for CVPR 2025.
+I am fortunate to collaborate with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a href="https://espere-1119-song.github.io">Enxin Song</a>, working on Efficient Long Video Understanding. We built AuroraLong, a hybrid MLLM that handles hour-long videos on a single consumer GPU while surpassing previous SOTA on multiple video understanding benchmarks such as <a href="https://github.com/JUNJIE99/MLVU">MLVU</a>, <a href="https://github.com/rese1f/MovieChat">MovieChat-1k</a> and <a href="https://rese1f.github.io/aurora-web">VDC</a>. Our paper is under review for CVPR 2025.
 
 I'm interested in various aspects of machine learning and computer systems: 
 - Hardware-aware efficient algorithms
