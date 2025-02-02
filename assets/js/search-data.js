@@ -367,10 +367,10 @@ ninja.data = [{
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
             },},{id: "news-started-to-work-as-a-teaching-assistant-for-ece-120-introduction-to-computing-with-prof-lin-qiu-prof-zuozhu-liu-and-prof-ujjal-bhowmik",
-          title: 'Started to work as a teaching assistant for ECE 120: Introduction to Computing,...',
+          title: 'Started to work as a Teaching Assistant for ECE 120 Introduction to Computing,...',
           description: "",
           section: "News",},{id: "news-started-to-work-as-a-teaching-assistant-for-ece-220-computer-systems-amp-amp-programming-with-prof-bruce-yu-and-prof-ujjal-bhowmik",
-          title: 'Started to work as a teaching assistant for ECE 220: Computer Systems &amp;amp;amp;...',
+          title: 'Started to work as a Teaching Assistant for ECE 220 Computer Systems &amp;amp;amp;...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
