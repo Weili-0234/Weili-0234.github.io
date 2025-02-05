@@ -361,16 +361,14 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+    },{id: "news-joined-cvnext-lab-advised-by-prof-gaoang-wang",
+          title: 'Joined CVNext Lab, advised by Prof. Gaoang Wang',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-started-to-work-as-a-teaching-assistant-for-ece-120-introduction-to-computing-with-prof-lin-qiu-prof-zuozhu-liu-and-prof-ujjal-bhowmik",
-          title: 'Started to work as a Teaching Assistant for ECE 120 Introduction to Computing,...',
+          section: "News",},{id: "news-started-to-work-as-teaching-assistant-for-ece-120-introduction-to-computing-with-prof-lin-qiu-prof-zuozhu-liu-and-prof-ujjal-bhowmik",
+          title: 'Started to work as Teaching Assistant for ECE 120 Introduction to Computing, with...',
           description: "",
-          section: "News",},{id: "news-started-to-work-as-a-teaching-assistant-for-ece-220-computer-systems-amp-amp-programming-with-prof-bruce-yu-and-prof-ujjal-bhowmik",
-          title: 'Started to work as a Teaching Assistant for ECE 220 Computer Systems &amp;amp;amp;...',
+          section: "News",},{id: "news-started-to-work-as-teaching-assistant-for-ece-220-computer-systems-amp-amp-programming-with-prof-bruce-yu-and-prof-ujjal-bhowmik",
+          title: 'Started to work as Teaching Assistant for ECE 220 Computer Systems &amp;amp;amp; Programming,...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
