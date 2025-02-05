@@ -20,7 +20,7 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 2 # leave blank to include all the news in the `_news` folder
+  limit: 3 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: false
@@ -36,7 +36,7 @@ I am fortunate to collaborate with <a href="http://rese1f.github.io/">Wenhao Cha
 
 I'm interested in various aspects of machine learning and computer systems: 
 - Hardware-aware efficient algorithms
-- Dynamic sparsity for training and inference acceleration 
+- Exploiting sparsity for training and inference acceleration 
 - Applications of multi-modal (video, audio, text, etc.) long-context modeling 
 <!-- TODO: state my research interests -->
 

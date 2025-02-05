@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started to work as a Teaching Assistant for ECE 220 Computer Systems & Programming, with Prof. <a href="https://bruceyo.github.io/">Bruce Yu</a> and Prof. <a href="https://ece.illinois.edu/about/directory/faculty/ubhowmik">Ujjal Bhowmik</a>
+Started to work as Teaching Assistant for ECE 220 Computer Systems & Programming, with Prof. <a href="https://bruceyo.github.io/">Bruce Yu</a> and Prof. <a href="https://ece.illinois.edu/about/directory/faculty/ubhowmik">Ujjal Bhowmik</a>

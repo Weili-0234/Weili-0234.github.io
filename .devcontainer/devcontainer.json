@@ -5,19 +5,22 @@
   "image": "mcr.microsoft.com/devcontainers/jekyll",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "build-essential,imagemagick,inotify-tools,jupyter-nbconvert,procps,ruby-full,zlib1g-dev"
-    },
-    "ghcr.io/devcontainers-contrib/features/prettier:1": {}
-  },
+  // "features": {
+  //   "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+  //     "packages": "build-essential,imagemagick,inotify-tools,jupyter-nbconvert,procps,ruby-full,zlib1g-dev"
+  //   }
+  // },
 
   // Optionally: run jekyll serve automatically on container entering using the Docker entrypoint
   "postAttachCommand": "./bin/entry_point.sh",
 
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode", "sissel.shopify-liquid", "yzhang.markdown-all-in-one"],
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "sissel.shopify-liquid",
+        "yzhang.markdown-all-in-one"
+      ],
       "settings": {
         // use prettier code formatter as default formatter
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -26,6 +29,9 @@
       }
     }
   },
+
+  // Install required packages using postCreateCommand instead
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential imagemagick inotify-tools jupyter-nbconvert procps ruby-full zlib1g-dev",
 
   "remoteUser": "vscode"
 }
