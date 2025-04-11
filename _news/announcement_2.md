@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-05-15 15:59:00-0400
+date: 2025-03-31 15:59:00-0400
 inline: true
 related_posts: false
 ---
 
-Joined <a href="https://cvnext.github.io/">CVNext Lab</a>, advised by Prof. <a href="https://person.zju.edu.cn/en/gaoangwang">Gaoang Wang</a>
+One paper accepted by the second CVPR workshop on <a href="https://sites.google.com/view/elvm/">Efficient Large Vision Models</a>
