@@ -3,18 +3,18 @@
 
 @string{aps = {American Physical Society,}}
 
-@article{xu2024longvidrwkv,
-  abbr={ICCV 2025},
+@inproceedings{xu2025auroralong,
+  abbr={AuroraLong},
   title={Bringing RNNs Back to Efficient Open-Ended Video Understanding},
   author={Xu, Weili and Song, Enxin and Chai, Wenhao and Wen, Xuexiang, and Ye, Tian and Wang, Gaoang},
-  publisher={preprint},
-  month={10},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month={October},
   year={2025},
-  additional_info={To appear at International Conference on Computer Vision (ICCV) 2025},
   selected={true},
+  arxiv={2507.02591},
   pdf={LongVidRWKV.pdf},
   supp={ELVM-012_supp.pdf},
-  abstract={Transformer-based long video understanding models are hindered by their high computational complexity and prohibitive memory cost, since the memory and computation scale quadratically with input sequence length. We propose LongVidRWKV to address this challenge by replacing the LLM component in MLLMs with RWKV, an RNNl ike language model that handles input sequences of arbitrary length with constant-size hidden states. To reduce the gap between RWKV's 4k context length and the extended token sequences typical of long videos, we combine visual token merge with linear RNN models and reorder merged visual tokens. Despite having only 2B parameters and being trained exclusively on public data, LongVidRWKV achieves performance comparable to Transformerbased models of similar size trained on private datasets across multiple video benchmarks. This demonstrates the potential of efficient, linear RNNs to lower the computation entry barrier for long video understanding. To our knowledge, we are the first to use an RWKV LLM backbone in a LLaVA-like model for open-ended video understanding.},
+  abstract={The challenge of long video understanding lies in its high computational complexity and prohibitive memory cost, since the memory and computation required by transformer-based LLMs scale quadratically with input sequence length. We propose AuroraLong to address this challenge by replacing the LLM component in MLLMs with a linear RNN language model that handles input sequence of arbitrary length with constant-size hidden states. To further increase throughput and efficiency, we combine visual token merge with linear RNN models by reordering the visual tokens by their sizes in ascending order. Despite having only 2B parameters and being trained exclusively on public data, AuroraLong achieves performance comparable to Transformer-based models of similar size trained on private datasets across multiple video benchmarks. This demonstrates the potential of efficient, linear RNNs to democratize long video understanding by lowering its computational entry barrier. To our best knowledge, we are the first to use a linear RNN based LLM backbone in a LLaVA-like model for open-ended video understanding.},
   preview={AuroraLong-preview.png},
   bibtex_show={true}
 }
