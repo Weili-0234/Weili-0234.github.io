@@ -20,7 +20,7 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 3 # leave blank to include all the news in the `_news` folder
+  limit: 4 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: false
@@ -30,7 +30,7 @@ latest_posts:
 <!-- Seeking research opportunities in MLsys <br> -->
 <!-- Check out my CV <a href="https://www.google.com">here</a> -->
 
-I am a sophomore in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
+I am a third-year undergraduate in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
 
 I am fortunate to collaborate with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a href="https://espere-1119-song.github.io">Enxin Song</a>, working on Efficient Long Video Understanding. We built AuroraLong, a hybrid MLLM that efficiently handles hour-long videos on a single consumer GPU while achieving comparable performance to its Transformer counterparts on multiple video understanding benchmarks such as <a href="https://github.com/JUNJIE99/MLVU">MLVU</a>, <a href="https://github.com/rese1f/MovieChat">MovieChat-1k</a> and <a href="https://rese1f.github.io/aurora-web">VDC</a>.
 
