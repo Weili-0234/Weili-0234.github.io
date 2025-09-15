@@ -27,8 +27,8 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-<!-- Seeking research opportunities in MLsys <br> -->
-<!-- Check out my CV <a href="https://www.google.com">here</a> -->
+Seeking research opportunities in MLsys <br>
+Check out my CV <a href="./assets/pdf/weili_resume.pdf">here</a>
 
 I am a third-year undergraduate in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
 
