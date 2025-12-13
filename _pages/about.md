@@ -32,11 +32,11 @@ Check out my CV <a href="./assets/pdf/weili_resume.pdf">here</a>
 
 I am a third-year undergraduate in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
 
-I am fortunate to collaborate with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a href="https://espere-1119-song.github.io">Enxin Song</a>, working on Efficient Long Video Understanding. We built AuroraLong, a hybrid MLLM that efficiently handles hour-long videos on a single consumer GPU while achieving comparable performance to its Transformer counterparts on multiple video understanding benchmarks such as <a href="https://github.com/JUNJIE99/MLVU">MLVU</a>, <a href="https://github.com/rese1f/MovieChat">MovieChat-1k</a> and <a href="https://rese1f.github.io/aurora-web">VDC</a>.
+I used to work with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a href="https://espere-1119-song.github.io">Enxin Song</a>, working on Efficient Long Video Understanding. We built AuroraLong, a hybrid MLLM that efficiently handles hour-long videos on a single consumer GPU while achieving comparable performance to its Transformer counterparts on multiple video understanding benchmarks such as <a href="https://github.com/JUNJIE99/MLVU">MLVU</a>, <a href="https://github.com/rese1f/MovieChat">MovieChat-1k</a> and <a href="https://rese1f.github.io/aurora-web">VDC</a>.
 
 I'm interested in various aspects of machine learning and computer systems: 
-- Hardware-aware efficient algorithms
-- Exploiting sparsity for training and inference acceleration 
+- Efficient sequence modeling algorithms with hardware awareness
+- Efficient agentic systems and their implementation
 - Applications of multi-modal (video, audio, text, etc.) long-context modeling 
 <!-- TODO: state my research interests -->
 
