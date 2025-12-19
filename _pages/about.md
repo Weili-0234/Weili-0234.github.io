@@ -36,8 +36,8 @@ I used to work with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a hr
 
 I'm interested in various aspects of machine learning and computer systems: 
 - Efficient sequence modeling algorithms with hardware awareness
-- Efficient agentic systems and their implementation
-- Applications of multi-modal (video, audio, text, etc.) long-context modeling 
+- Kernel and runtime optimization for agentic systems
+- Applications of multi-modal (text, video, audio, etc.) long-context modeling 
 <!-- TODO: state my research interests -->
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
