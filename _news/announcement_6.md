@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Video-MMLU is granted Outstanding Paper Awared by ICCV 2025 <a href="https://knowledgemr-workshop.github.io">Workshop on Knowledge-Intensive Multimodal Reasoning</a>!
+Video-MMLU is granted Outstanding Paper Award by ICCV 2025 <a href="https://knowledgemr-workshop.github.io">Workshop on Knowledge-Intensive Multimodal Reasoning</a>!

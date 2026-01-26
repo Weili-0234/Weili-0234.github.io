@@ -32,12 +32,13 @@ Check out my CV <a href="./assets/pdf/weili_resume.pdf">here</a>
 
 I am a third-year undergraduate in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
 
-I used to work with <a href="http://rese1f.github.io/">Wenhao Chai</a> and <a href="https://espere-1119-song.github.io">Enxin Song</a>, working on Efficient Long Video Understanding. We built AuroraLong, a hybrid MLLM that efficiently handles hour-long videos on a single consumer GPU while achieving comparable performance to its Transformer counterparts on multiple video understanding benchmarks such as <a href="https://github.com/JUNJIE99/MLVU">MLVU</a>, <a href="https://github.com/rese1f/MovieChat">MovieChat-1k</a> and <a href="https://rese1f.github.io/aurora-web">VDC</a>.
-
 I'm interested in various aspects of machine learning and computer systems: 
-- Efficient sequence modeling algorithms with hardware awareness
-- Kernel and runtime optimization for agentic systems
-- Applications of multi-modal (text, video, audio, etc.) long-context modeling 
+- Efficient sequence modeling algorithms with hardware-aware implementation
+- Heterogeneous runtime optimization for agentic workloads
+- Long-context modeling for multi-modal (text, video, audio, etc.) applications
+
+My journey into MLSys research began with AuroraLong, a hybrid multimodal LLM I built that unlocked hour long video understanding on consumer GPUs, which lead to a first-author paper accepted at ICCV 2025. This steered my focus toward **system-driven modeling**, where I co-design architecture and infrastructure to bridge the gap between fantastic algorithms and the rapid iteration that scales them.
+
 <!-- TODO: state my research interests -->
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
