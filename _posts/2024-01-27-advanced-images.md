@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: a post with advanced image components
 date: 2024-01-27 11:46:00
@@ -10,6 +11,7 @@ images:
   compare: true
   slider: true
 ---
+published: false
 
 This is an example post with advanced image components.
 

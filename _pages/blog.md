@@ -1,5 +1,4 @@
 ---
-published: false
 layout: default
 permalink: /blog/
 title: blog
@@ -16,7 +15,6 @@ pagination:
     before: 1 # The number of links before the current page
     after: 3 # The number of links after the current page
 ---
-published: false
 
 <div class="post">
 

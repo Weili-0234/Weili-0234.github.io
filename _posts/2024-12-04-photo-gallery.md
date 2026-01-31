@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: a post with image galleries
 date: 2024-12-04 01:59:00
@@ -12,6 +13,7 @@ images:
   spotlight: true
   venobox: true
 ---
+published: false
 
 The images in this post are all zoomable, arranged into different mini-galleries using different libraries.
 
@@ -22,6 +24,7 @@ The images in this post are all zoomable, arranged into different mini-galleries
 <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg" data-lightbox="roadtrip"><img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" /></a>
 
 ---
+published: false
 
 ## [PhotoSwipe](https://photoswipe.com/)
 
@@ -60,6 +63,7 @@ The images in this post are all zoomable, arranged into different mini-galleries
 </div>
 
 ---
+published: false
 
 ## [Spotlight JS](https://nextapps-de.github.io/spotlight/)
 
@@ -89,6 +93,7 @@ The images in this post are all zoomable, arranged into different mini-galleries
 </div>
 
 ---
+published: false
 
 ## [Venobox](https://veno.es/venobox/)
 
