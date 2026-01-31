@@ -26,7 +26,7 @@ So you’ve seen the forward pass in FlashAttention, and know how to compute the
 
 But in deep learning, computing the output is only half the battle. To train the model, we need gradients. We need the **backward pass**.
 
-Implementing a backward pass for FlashAttention is notoriously more difficult than the forward pass. Why? Because we didn't save the massive attention score matrix—it was too big. To get gradients, we effectively have to **recompute** the attention scores on the fly using the saved LogSumExp (`lse`) from the forward pass, while simultaneously propagating gradients backward.
+Implementing a backward pass for FlashAttention is notoriously more difficult than the forward pass. Why? Because we didn't save the massive attention score matrix. Instead, we **recompute** attention scores on the fly using the saved LogSumExp (`lse`) from the forward pass.
 
 In this walkthrough, we will dissect the backward pass in FLA's excellent [implementation](https://github.com/fla-org/flash-linear-attention/blob/f0de028bf3a4a6bb7c39f9c9585c4f03a7b72641/fla/ops/attn/parallel.py) in 3 phases.
 
@@ -34,9 +34,9 @@ In this walkthrough, we will dissect the backward pass in FLA's excellent [imple
 
 ## The Data Layout
 
-Before we jump into the code, let's explicitly define what we are working with. The kernel is designed to handle Grouped Query Attention (GQA), which complicates the shapes slightly.
+Before we jump into the code, let's explicitly define what we are working with. The kernel is designed to handle Grouped Query Attention (GQA), which made the shapes slightly more complicated.
 
-We are operating on the following tensors:
+We operate on the following tensors:
 
 *   **`q` (Queries):** Shape `[B, T, HQ, K]`.
     *   `B`: Batch size.
@@ -60,6 +60,26 @@ Inside the `ParallelAttentionFunction`, the `backward` method is automatically c
 @torch.compile
 class ParallelAttentionFunction(torch.autograd.Function):
 
+    @staticmethod
+    @contiguous
+    @autocast_custom_fwd
+    def forward(ctx, q, k, v, g, scale, cu_seqlens):
+        ctx.dtype = q.dtype
+
+        RCP_LN2: float = 1.4426950216
+        g_cumsum = chunk_global_cumsum(g, cu_seqlens=cu_seqlens, scale=RCP_LN2) if g is not None else None
+        o, lse = parallel_attn_fwd(
+            q=q,
+            k=k,
+            v=v,
+            g_cumsum=g_cumsum,
+            scale=scale,
+            cu_seqlens=cu_seqlens,
+        )
+        ctx.save_for_backward(q, k, v, o, g_cumsum, lse)
+        ctx.cu_seqlens = cu_seqlens
+        ctx.scale = scale
+        return o.to(q.dtype)
     @staticmethod
     @contiguous
     @autocast_custom_bwd
@@ -94,32 +114,33 @@ The launcher function `parallel_attn_bwd` handles the dispatch. Unlike the forwa
 
 ```python
 def parallel_attn_bwd(
-    # ... args ...
+    # arguments omitted here
 ):
-    # ... Shape extraction ...
+    # extracting shapes
     B, T, H, K, V = *k.shape, v.shape[-1]
     HQ = q.shape[2]
-    G = HQ // H  # The GQA group size
+    G = HQ // H  # group size in GQA
 
-    # 1. Tuning Block Sizes
-    # Backward pass requires tuning based on hardware (Hopper vs Ampere)
-    # to balance register usage.
+    # determine block sizes based on GPU architecture (Hopper vs Ampere)
     if check_shared_mem('hopper'):
         BT = 128
         BS = 64
         # ...
     
-    # 2. Preprocess to get Delta
+    # preprocess delta
     delta = parallel_attn_bwd_preprocess(o, do)
 
-    # 3. Prepare output tensors
-    # Note: dq is created with shape [B, T, HQ, K]
-    # But dk/dv are initially created with [B, T, HQ, K/V] to handle GQA expansion
+    # prepare output tensors
+    # dq: [B, T, HQ, K]
+    # dk: [B, T, HQ, K]
+    # dv: [B, T, HQ, V]
+    # since we replicate G copies of keys/values in GQA
+    # shape of dk and dv might not be the same as k and v, respectively
     dq = torch.empty(..., device=q.device)
     dk = torch.empty(..., device=q.device) 
     dv = torch.empty(..., device=q.device)
     
-    # 4. Launch separate kernels for dQ and dKV
+    # launch separate kernels for dQ and dKV
     grid = (NV, NT, B * HQ)
     
     parallel_attn_bwd_kernel_dq[grid](
@@ -130,7 +151,7 @@ def parallel_attn_bwd(
         q=q, k=k, v=v, lse=lse, delta=delta, do=do, dk=dk, dv=dv, ...
     )
     
-    # 5. Handle GQA reduction
+    # Handle GQA reduction
     # We computed gradients for replicated keys/values. Now we sum them up.
     dk = reduce(dk, 'b t (h g) k -> b t h k', g=G, reduction='sum')
     dv = reduce(dv, 'b t (h g) v -> b t h v', g=G, reduction='sum')
@@ -142,7 +163,7 @@ The design choice to split `dq` and `dkv` calculation into two kernels (unlike s
 
 ## Step 1: Preprocessing Delta
 
-Before calculating gradients, we need a term `delta`. To derive the Softmax gradient, there is a row-wise summation term $\sum (O \cdot dO)$, which we pre-compute to avoid constantly re-computing it in the main loop below.
+Before calculating gradients, we need a term `delta`. To derive the Softmax gradient, there is a row-wise summation term $\sum (O \cdot dO)$, which we pre-compute to avoid constant re-computation in the main loop below. (Note that recomputation of this term is more expensive than recomputing the attentions scores.)
 
 ```python
 @triton.jit
@@ -157,6 +178,7 @@ def parallel_attn_bwd_kernel_preprocess(
     b_o = tl.load(o + i_n * V + o_d, mask=m_d, other=0)
     b_do = tl.load(do + i_n * V + o_d, mask=m_d, other=0).to(tl.float32)
     
+    # compute a tile of delta
     # delta = sum(output * grad_output)
     b_delta = tl.sum(b_o * b_do)
 
@@ -191,26 +213,24 @@ We iterate over blocks of Keys (`k`) and Values (`v`). This looks very similar t
 
 ```python
     for i_s in range(0, i_t * BT, BS):
-        # ... Load k [BK, BS] and v [BV, BS] ...
+        # Ommitted: Load k [BK, BS] and v [BV, BS]
         
-        # 1. Recompute Attention Scores [BT, BS]
+        # Recompute Attention Scores [BT, BS]
         b_s = tl.dot(b_q, b_k) * scale * RCP_LN2
-        
-        # ... Apply log-decay g logic if USE_G is True ...
 
-        # 2. Recompute Probability P = exp(Score - LSE)
+        # Recompute Probability P = exp(Score - LSE)
         # We mask out future tokens if causal
         b_s = tl.where((o_q[:, None] >= o_k[None, :]) & m_k[None, :], b_s, float('-inf'))
         b_p = exp2(b_s - b_lse[:, None])
         
-        # 3. Compute Gradient of Attention Scores (dS)
+        # Compute Gradient of Attention Scores (dS)
         # [BT, BV] @ [BV, BS] -> [BT, BS]
         b_dp = tl.dot(b_do, b_v)
         
         # dS = P * (dP - delta)
         b_ds = b_p * (b_dp.to(tl.float32) - b_delta[:, None])
         
-        # 4. Accumulate Gradient for Query (dQ)
+        # Accumulate Gradient for Query (dQ)
         # [BT, BS] @ [BS, BK] -> [BT, BK]
         b_dq += tl.dot(b_ds.to(b_k.dtype), tl.trans(b_k))
 ```
@@ -218,8 +238,8 @@ We iterate over blocks of Keys (`k`) and Values (`v`). This looks very similar t
 ### The Gradient Math
 
 The code concisely implements the backward pass of Softmax-Attention.
-1.  **Recompute `b_p`**: We recover the attention probabilities using `q`, `k`, and `lse`. We didn't read this from HBM; we computed it on the fly.
-2.  **Compute `b_ds`**: This represents $\frac{\partial L}{\partial S}$ (the gradient w.r.t the attention scores). The formula `P * (dot(do, v) - delta)` is the standard efficient softmax gradient implementation.[^1]
+1.  **Recompute `b_p`**: Using `q`, `k`, and `lse`, we recompute the attention probabilities on the fly.
+2.  **Compute `b_ds`**: This represents a tile of $\frac{\partial L}{\partial S}$ (the gradient of the attention scores). The formula `P * (dot(do, v) - delta)` is the standard efficient softmax gradient implementation.[^1]
 3.  **Compute `b_dq`**: Since $S = QK^T$, the gradient flow tells us $dQ = dS \cdot K$. In Triton, this is `tl.dot(b_ds, tl.trans(b_k))`.
 
 ## Step 3: Computing dK and dV
@@ -243,28 +263,28 @@ In `dq`, we fixed a block of **Queries** (rows) and iterated over columns. Here,
     # Note: We only loop over queries that come AFTER the current key (causal masking)
     # If I am a Key at time 10, only Queries at time >= 10 cared about me.
     for i_s in range(i_t * BT, min((i_t + 1) * BT, T), BS):
-        # ... Load q, do, lse, delta ...
+        # Ommitted: Load q, do, lse, delta ...
 
-        # 1. Recompute Score (Transposed)
+        # Recompute Score (Transposed)
         # Note: We compute dot(K, Q^T) effectively
         b_s = tl.dot(b_k, tl.trans(b_q)) * scale * RCP_LN2
         
-        # 2. Recompute P 
+        # Recompute P 
         b_p = tl.where((o_k[:, None] <= o_q[None, :]) & m_q[None, :], exp2(b_s - b_lse[None, :]), 0)
         
-        # 3. Compute dV
+        # Compute dV
         # dV += P^T * dO
         # [BT, BS] @ [BS, BV] -> [BT, BV]
         b_dv += tl.dot(b_p.to(b_do.dtype), b_do)
         
-        # 4. Compute dS
+        # Compute dS
         # We need dP = dO * V^T. 
         # In code: b_dp = dot(b_v, trans(b_do))
         b_dp = tl.dot(b_v, tl.trans(b_do))
         
         b_ds = b_p * (b_dp - b_delta[None, :])
         
-        # 5. Compute dK
+        # Compute dK
         # dK += dS^T * Q
         # [BT, BS] @ [BS, BK] -> [BT, BK]
         b_dk += tl.dot(b_ds.to(b_q.dtype), b_q)
@@ -276,11 +296,11 @@ By keeping `k` and `v` in SRAM and streaming `q`, `do`, and `delta` from HBM, we
 
 ## Acknowledgments
 
-This is inspired by our very amazing [Nathan Chen](https://nathanchen.me/)'s [Triton Flash Attention Kernel Walkthrough: The Forward Pass](https://nathanchen.me/public/Triton-Flash-Attention-Kernel-Walkthrough.html). Big shoutout to him! 
+This code walkthrough is inspired by our very amazing [Nathan Chen](https://nathanchen.me/)'s [Triton Flash Attention Kernel Walkthrough: The Forward Pass](https://nathanchen.me/public/Triton-Flash-Attention-Kernel-Walkthrough.html). Big shoutout to Nathan! 
 
 ---
 
-### The Math Corner
+### Footnote
 
 [^1]: **The Delta Term derivation:**
     If we define attention output $O_i = \sum_j P_{ij} V_j$, the gradient of the loss function $L$ with respect to the pre-softmax scores $S_{ij}$ involves the Jacobian of the Softmax.
