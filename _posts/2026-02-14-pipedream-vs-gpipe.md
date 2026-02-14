@@ -9,13 +9,13 @@ categories: technical
 
 This is a pointer blog post to an interactive simulation that visualizes the memory dynamics of **GPipe** (naive pipeline parallelism schedule) vs **PipeDream** (1F1B schedule).
 
-<div class="row mt-3">
+<!-- <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <a href="https://pipedream-vs-gpipe-visualizer-952909165134.us-west1.run.app/">
             <img class="img-fluid rounded z-depth-1" src="https://pipedream-vs-gpipe-visualizer-952909165134.us-west1.run.app/" alt="PipeDream vs GPipe Visualizer" style="display: none;" onerror="this.src='/assets/img/placeholder.png'; this.style.display='block';">
         </a>
     </div>
-</div>
+</div> -->
 
 [Launch Interactive Simulation](https://pipedream-vs-gpipe-visualizer-952909165134.us-west1.run.app/)
 
