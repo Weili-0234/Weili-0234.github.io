@@ -16,15 +16,48 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-implementing-flash-attention-backward-pass-in-triton",
+        },{id: "post-understanding-activation-memory-dynamics-in-pipeline-parallelism-variants",
       
-        title: "Implementing Flash Attention: Backward Pass in Triton",
+        title: "Understanding Activation Memory Dynamics in Pipeline Parallelism Variants",
       
-      description: "In this follow-up post to Nathan Chen&#39;s Triton Flash Attention Kernel Walkthrough: The Forward Pass, we dive into gradient computation for queries, keys, and values in the backward pass.",
+      description: "How 1F1B schedule in PipeDream reduces activation memory hold on GPU compared to naive PP schedule like GPipe.",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/fa-bwd-triton/";
+          window.location.href = "/blog/2026/pipedream-vs-gpipe/";
+        
+      },
+    },{id: "post-how-thread-block-swizzling-boosts-l2-cache-hit-rate-in-matrix-multiplication",
+      
+        title: "How Thread Block Swizzling boosts L2 Cache Hit Rate in Matrix Multiplication",
+      
+      description: "A visual aid to Triton&#39;s official matmul tutorial, explaining how thread block level swizzling increases L2 cache hit rate.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/thread-block-swizzling/";
+        
+      },
+    },{id: "post-implementing-flash-attention-backward-pass-in-triton",
+      
+        title: "Implementing Flash Attention: Backward Pass in Triton",
+      
+      description: "In this follow-up post to Nathan Chen&#39;s Triton Flash Attention Kernel Walkthrough: The Forward Pass, we dive into gradient computation for queries, keys, and values in Flash Attention&#39;s backward pass.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/fa-bwd-triton/";
+        
+      },
+    },{id: "post-view-transformer-layers-from-online-optimization-perspective",
+      
+        title: "View Transformer Layers from Online Optimization Perspective",
+      
+      description: "In this blog post co-authored with Wenhao Chai, we revisit the landscape of efficient Transformer variants from a unified view of fast weight programming.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/view-transformer-layers/";
         
       },
     },{id: "news-start-to-work-as-teaching-assistant-for-ece-120-introduction-to-computing-with-prof-lin-qiu-prof-zuozhu-liu-and-prof-ujjal-bhowmik",
