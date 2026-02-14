@@ -1,9 +1,9 @@
 ---
 layout: distill
 title: "Implementing Flash Attention: Backward Pass in Triton"
-date: 2025-01-30 12:00:00
-description: "In this follow-up post to Nathan Chen's <a href='https://nathanchen.me/public/Triton-Flash-Attention-Kernel-Walkthrough.html'>Triton Flash Attention Kernel Walkthrough: The Forward Pass</a>, we dive into gradient computation for queries, keys, and values in the backward pass."
-tags: triton gpu attention mlsys
+date: 2026-01-30 12:00:00
+description: "In this follow-up post to Nathan Chen's <a href='https://nathanchen.me/public/Triton-Flash-Attention-Kernel-Walkthrough.html'>Triton Flash Attention Kernel Walkthrough: The Forward Pass</a>, we dive into gradient computation for queries, keys, and values in Flash Attention's backward pass."
+tags: attention triton gpu kernel mlsys
 categories: technical
 
 toc:
@@ -22,9 +22,13 @@ toc:
 
 <!-- Readers are assumed to be familiar with the forward pass, including basic ideas like tiling and the `make_block_ptr` syntax. -->
 
-So you’ve seen the forward pass in FlashAttention, and know how to compute the attention output without ever materializing the big $N \times N$ score matrix using tiling and online softmax.
+So you’ve seen the forward pass in FlashAttention, and you know how to compute the attention output without ever materializing the big $N \times N$ score matrix using tiling and online softmax.
 
 But in deep learning, computing the output is only half the battle. To train the model, we need gradients. We need the **backward pass**.
+
+<!-- Actually it's conceptually simpler than forward pass if you know the gradient math well. The main difficulty lies in the implementation details. -->
+
+<!-- might be a bit un-intuitive if you haven't seen the gradient math before (e.g. why we need to compute element-wise product of `do` and `o` and sum up each row) -->
 
 Implementing a backward pass for FlashAttention is notoriously more difficult than the forward pass. Why? Because we didn't save the massive attention score matrix. Instead, we **recompute** attention scores on the fly using the saved LogSumExp (`lse`) from the forward pass.
 
@@ -37,6 +41,8 @@ In this walkthrough, we will dissect the backward pass in FLA's excellent [imple
 Before we jump into the code, let's explicitly define what we are working with. The kernel is designed to handle Grouped Query Attention (GQA), which made the shapes slightly more complicated.
 
 We operate on the following tensors:
+
+<!-- 这里可以考虑用codeblock而不是markdown list -->
 
 *   **`q` (Queries):** Shape `[B, T, HQ, K]`.
     *   `B`: Batch size.
@@ -65,7 +71,6 @@ class ParallelAttentionFunction(torch.autograd.Function):
     @autocast_custom_fwd
     def forward(ctx, q, k, v, g, scale, cu_seqlens):
         ctx.dtype = q.dtype
-
         RCP_LN2: float = 1.4426950216
         g_cumsum = chunk_global_cumsum(g, cu_seqlens=cu_seqlens, scale=RCP_LN2) if g is not None else None
         o, lse = parallel_attn_fwd(
@@ -80,6 +85,11 @@ class ParallelAttentionFunction(torch.autograd.Function):
         ctx.cu_seqlens = cu_seqlens
         ctx.scale = scale
         return o.to(q.dtype)
+```
+
+The context object `ctx` gives us back the tensors we saved during the forward pass. In particular, we have `o` (the forward output) and `lse` (the Log-Sum-Exp statistics). We pass these, along with the incoming gradient `do`, into our launcher `parallel_attn_bwd`.
+
+```python
     @staticmethod
     @contiguous
     @autocast_custom_bwd
@@ -101,8 +111,6 @@ class ParallelAttentionFunction(torch.autograd.Function):
 
         return dq.to(q), dk.to(k), dv.to(v), dg, None, None
 ```
-
-The context object `ctx` gives us back the tensors we saved during the forward pass. In particular, we have `o` (the forward output) and `lse` (the Log-Sum-Exp statistics). We pass these, along with the incoming gradient `do`, into our launcher `parallel_attn_bwd`.
 
 ## The Launcher
 
