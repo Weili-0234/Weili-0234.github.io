@@ -3,7 +3,7 @@ layout: distill
 title: "View Transformer Layers from Online Optimization Perspective"
 date: 2025-07-17 12:00:00
 description: "In this blog post co-authored with <a href='https://wenhaochai.com/'>Wenhao Chai</a>, we revisit the landscape of efficient Transformer variants from a unified view of fast weight programming."
-tags: transformer sequence-modeling llm-architecture optimization
+tags: attention transformer sequence-modeling llm-architecture optimization
 categories: technical
 ---
 

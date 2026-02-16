@@ -3,7 +3,7 @@ layout: distill
 title: "Implementing Flash Attention: Backward Pass in Triton"
 date: 2026-01-30 12:00:00
 description: "In this follow-up post to Nathan Chen's <a href='https://nathanchen.me/public/Triton-Flash-Attention-Kernel-Walkthrough.html'>Triton Flash Attention Kernel Walkthrough: The Forward Pass</a>, we dive into gradient computation for queries, keys, and values in Flash Attention's backward pass."
-tags: attention triton gpu kernel mlsys
+tags: attention gpu io-aware kernel mlsys triton
 categories: technical
 
 toc:

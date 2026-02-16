@@ -3,7 +3,7 @@ layout: post
 title: "How Thread Block Swizzling boosts L2 Cache Hit Rate in Matrix Multiplication"
 date: 2026-02-07 00:00:00
 description: "A visual aid to Triton's official matmul tutorial, explaining how thread block level swizzling increases L2 cache hit rate."
-tags: triton gpu performance visual
+tags: io-aware gpu triton mlsys visual kernel
 categories: technical
 ---
 

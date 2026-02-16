@@ -3,7 +3,7 @@ layout: post
 title: "Understanding Activation Memory Dynamics in Pipeline Parallelism Variants"
 date: 2026-02-14 00:00:00
 description: "How 1F1B schedule in PipeDream reduces activation memory hold on GPU compared to naive PP schedule like GPipe."
-tags: pipelined-parallelism mlsys visual
+tags: pipeline-parallelism mlsys visual
 categories: technical
 ---
 
