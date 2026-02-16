@@ -255,8 +255,8 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["triton", "gpu", "attention", "mlsys"] # these tags will be displayed on the front page of your blog
-display_categories: ["technical"] # these categories will be displayed on the front page of your blog
+display_tags: ["triton", "attention", "kernel", "pipeline-parallelism"] # these tags will be displayed on the front page of your blog
+display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

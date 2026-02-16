@@ -37,7 +37,7 @@ I'm interested in various aspects of machine learning and computer systems:
 - Heterogeneous runtime optimization for agentic workloads
 - Long-context modeling for multi-modal (text, video, audio, etc.) applications
 
-My journey into MLSys research began with AuroraLong, a hybrid multimodal LLM I built that unlocked hour long video understanding on consumer GPUs, which lead to a first-author paper accepted at ICCV 2025. This steered my focus toward **system-driven modeling**, where I co-design architecture and infrastructure to bridge the gap between fantastic algorithms and the rapid iteration that scales them.
+My journey into MLSys research began with AuroraLong, a hybrid multimodal LLM I built that unlocked hour long video understanding on consumer GPUs, which lead to a first-author paper accepted at ICCV 2025. This steered my focus toward [**system-driven modeling**](https://x.com/Xinyu2ML/status/2013045386336682468?s=20), where we co-design architecture and infrastructure to bridge the gap between fantastic algorithms and the rapid [**iteration**](https://x.com/alphato_o/status/2014023822408819179?s=20) that scales them.
 
 <!-- TODO: state my research interests -->
 
