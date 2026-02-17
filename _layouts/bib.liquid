@@ -53,7 +53,13 @@
       {% assign author_array_size = entry.author_array | size %}
 
       {% assign author_array_limit = author_array_size %}
-      {% if site.max_author_limit and author_array_size > site.max_author_limit %}
+      {% assign entry_max_author_limit = entry['max_author_limit'] | plus: 0 %}
+      {% if entry_max_author_limit > 0 %}
+        {% assign author_array_limit = entry_max_author_limit %}
+        {% if author_array_limit > author_array_size %}
+          {% assign author_array_limit = author_array_size %}
+        {% endif %}
+      {% elsif site.max_author_limit and author_array_size > site.max_author_limit %}
         {% assign author_array_limit = site.max_author_limit %}
       {% endif %}
 
@@ -160,7 +166,8 @@
     {% if entry.month %}
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
     {% endif %}
-    {% if entry.year %}
+    {% assign hide_year = entry.hide_year | downcase %}
+    {% if entry.year and hide_year != 'true' %}
       {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
     {% endif %}
     {% if entry.location %}
@@ -175,12 +182,18 @@
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
-    <div class="periodical">
-      {{ periodical | strip }}
-    </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
-    </div>
+    {% assign periodical_text = periodical | strip %}
+    {% assign note_text = entry.note | strip %}
+    {% if periodical_text != '' %}
+      <div class="periodical">
+        {{ periodical_text }}
+      </div>
+    {% endif %}
+    {% if note_text != '' %}
+      <div class="periodical">
+        {{ note_text }}
+      </div>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">
