@@ -30,7 +30,7 @@ latest_posts:
 Seeking research opportunities in MLsys <br>
 Check out my CV <a href="./assets/pdf/weili_resume.pdf">here</a>
 
-I am a third-year undergraduate in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
+I am a research intern at <a href="https://www.together.ai/">Together AI</a>, as well as a rising senior undergraduate in Computer Engineering. I'm currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
 
 I'm interested in various aspects of machine learning and computer systems: 
 - Efficient sequence modeling algorithms with hardware-aware implementation
