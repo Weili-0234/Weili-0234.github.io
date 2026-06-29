@@ -78,6 +78,12 @@ ninja.data = [{
           section: "News",},{id: "news-video-mmlu-is-granted-outstanding-paper-award-by-iccv-2025-workshop-on-knowledge-intensive-multimodal-reasoning",
           title: 'Video-MMLU is granted Outstanding Paper Award by ICCV 2025 Workshop on Knowledge-Intensive Multimodal...',
           description: "",
+          section: "News",},{id: "news-started-internship-at-together-ai-see-you-in-sf",
+          title: 'Started internship at Together AI, see you in SF!',
+          description: "",
+          section: "News",},{id: "news-thunderagent-is-accepted-as-a-spotlight-paper-at-icml-2026-and-is-integrated-into-nvidia-dynamo-and-skyrl",
+          title: 'ThunderAgent is accepted as a Spotlight paper at ICML 2026 and is integrated...',
+          description: "",
           section: "News",},{
         id: 'social-discord',
         title: 'Discord',
