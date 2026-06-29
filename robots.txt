@@ -1,1 +1,1 @@
-User-agent: * Disallow: Sitemap: https://Weili-0234.github.io/sitemap.xml
+User-agent: * Disallow: Sitemap: https://weilixu.com/sitemap.xml
