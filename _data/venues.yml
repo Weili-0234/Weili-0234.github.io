@@ -11,3 +11,7 @@
 "preprint":
   url: https://cvpr.thecvf.com
   color: "#005C84"
+
+"ICML":
+  url: https://icml.cc/Conferences/2026
+  color: "#4C6FFF"
