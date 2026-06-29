@@ -163,13 +163,13 @@
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
-    {% if entry.month %}
-      {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
-    {% endif %}
     {% assign hide_year = entry.hide_year | downcase %}
+    {% assign entrymonth = entry.month | default: '' | strip %}
+    {% assign entryyear = '' %}
     {% if entry.year and hide_year != 'true' %}
-      {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
+      {% assign entryyear = entry.year | append: '' %}
     {% endif %}
+    {% capture entrydate %}{% if entrymonth != '' %}{{ entrymonth | capitalize }}{% endif %}{% if entrymonth != '' and entryyear != '' %} {% endif %}{% if entryyear != '' %}{{ entryyear }}{% endif %}{% endcapture %}
     {% if entry.location %}
       {% capture entrytype %}{{ entrytype }}{{ ", " }}{{ entry.location }}{% endcapture %}
     {% endif -%}
@@ -181,7 +181,7 @@
       {% include hook/bib.liquid %}
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
-    {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+    {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entrydate | strip != "" %}, {% endif %}{{ entrydate | strip }}{% endcapture %}
     {% assign periodical_text = periodical | strip %}
     {% assign note_text = entry.note | strip %}
     {% if periodical_text != '' %}
