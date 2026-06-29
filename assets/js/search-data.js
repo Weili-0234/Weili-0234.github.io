@@ -110,14 +110,14 @@ ninja.data = [{
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/weili-xu-2a05662a7", "_blank");
+          window.open("https://www.linkedin.com/in/weili-xu", "_blank");
         },
       },{
         id: 'social-x',
         title: 'X',
         section: 'Socials',
         handler: () => {
-          window.open("https://twitter.com/William02319778", "_blank");
+          window.open("https://twitter.com/_weilix", "_blank");
         },
       },{
       id: 'light-theme',
