@@ -1,0 +1,166 @@
+% Adapted from v3.tex in the user-specified Overleaf template.
+\documentclass[a4paper,11pt]{article}
+% \usepackage[a4paper, textwidth=6in]{geometry}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=2cm,bottom=1.6cm]{geometry}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+% \usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+% font
+\usepackage{palatino}
+% \usepackage{mathpazo}
+\usepackage{fontawesome}
+\usepackage{lastpage}
+
+
+% Define pink color for links if not already defined
+% \definecolor{linkpink}{RGB}{9, 15, 25}
+\definecolor{linkpink}{RGB}{140, 21, 21}
+% Define gray color if not already defined in preamble
+\definecolor{lightgray}{gray}{0.7}
+% Add some spacing commands if not already defined
+
+\definecolor{uw}{RGB}{54,60,116}
+\definecolor{uiuc}{RGB}{19,41,75}
+% \definecolor{uiuc}{RGB}{255,95,5}
+\definecolor{zju}{RGB}{0,63,136}
+\definecolor{hez}{RGB}{17,91,51}
+
+
+\newcommand{\sepspace}{\vspace{6pt}}
+\newcommand{\weili}{\underline{Weili Xu}}
+\newcommand{\eq}{$^*$}
+\newcommand{\lead}{$^\dagger$}
+
+\newcommand{\link}[2]{~\textcolor{linkpink}{\href{#1}{\textbf{#2}}}}
+
+\newcommand{\paper}[6]{\item[#2]#3.~\textcolor{linkpink}{\href{#1}{#4.}}~\textit{#5},~#6.}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Weili Xu}
+\fancyfoot[R]{\footnotesize Last updated: November 13, 2026. Page~\thepage~of~\pageref{LastPage}}
+
+
+
+\setlist[enumerate]{before=\raggedright}
+\begin{document}
+\begin{center}
+    \Large{\textbf{\textsc{Weili Xu}}}
+\end{center}
+\vspace{-18pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5em}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\faEnvelope~\textcolor{linkpink}{\href{mailto:weilixu2@illinois.edu}{\textbf{weilixu2@illinois.edu}}}\\
+\faHome~\textcolor{linkpink}{\href{https://weilixu.com/}{\textbf{weilixu.com}}}\\
+\faGoogle~\textcolor{linkpink}{\href{https://scholar.google.com/citations?user=gDqEGEUAAAAJ}{\textbf{Google Scholar}}}\\
+\faGithub~\textcolor{linkpink}{\href{https://github.com/Weili-0234}{\textbf{github.com/Weili-0234}}}\\
+\faTwitter~\textcolor{linkpink}{\href{https://x.com/_weilix/}{\textbf{x.com/\_weilix}}}\\
+\faLinkedin~\textcolor{linkpink}{\href{https://www.linkedin.com/in/weili-xu/}{\textbf{linkedin.com/in/weili-xu}}}
+\end{minipage}%
+\hfill\begin{minipage}[t]{0.52\textwidth}
+\raggedleft
+(447) 902-2798\\
+306 N. Wright St., MC 702\\
+Urbana, IL\\
+United States, 61801\\
+Dept. of Electrical \& Computer Engineering\\
+University of Illinois Urbana-Champaign
+\end{minipage}
+
+\section*{Research Overview}
+I am a senior undergraduate in Computer Engineering in the UIUC--Zhejiang University dual-degree program. \textbf{I am seeking Ph.D. opportunities in machine learning systems (MLSys) starting in Fall 2027.}
+
+My research focuses on agentic LLM serving, hardware-aware sequence modeling, and efficient long-context multimodal systems. My recent work includes \link{https://inference-rsi.com/}{Evolving Infra} (co-first author), on agent-adaptive serving, and~\link{https://flashstates.ai/}{FlashStates} (co-first author and project lead), on hybrid state management.
+
+\sepspace
+\section*{Education}
+\begin{tabular}{p{3.7cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}>{\raggedright\arraybackslash}p{12.0cm}}
+\raggedleft \textbf{B.S.} & \textcolor{uiuc}{\textbf{University of Illinois Urbana-Champaign}}\\
+\raggedleft Aug. 2023 -- Present & Computer Engineering; GPA: 3.97/4.00\\
+&\\[-5pt]
+\raggedleft \textbf{B.S.} & \textcolor{zju}{\textbf{Zhejiang University}}\\
+\raggedleft Aug. 2023 -- Present & Computer Engineering (Dual Degree); GPA: 4.20/4.30\\
+\end{tabular}
+\vspace{5pt}
+
+{\small Selected coursework (all A/A+): ECE 408 Applied Parallel Programming; ECE 391 Computer Systems Engineering.}
+
+\sepspace
+\section*{Employment and Research}
+\begin{tabular}{p{3.7cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}>{\raggedright\arraybackslash}p{12.0cm}}
+\raggedleft \textbf{Research Intern} & \textbf{Together AI}\\
+\raggedleft May -- Sep. 2026 & Frontier Performance Team, San Francisco, CA\\
+& \textcolor{gray}{QATFactory (co-first author): deployment-aligned quantization-aware training and distillation of LLMs.}\\
+&\\[-5pt]
+\raggedleft \textbf{Research Intern} & \textbf{University of Illinois Urbana-Champaign}\\
+\raggedleft Aug. 2025 -- Present & Machine Learning Systems, Urbana, IL\\
+& \textcolor{gray}{ThunderAgent: program-aware scheduling to address KV-cache thrashing and cross-node memory imbalance. Co-first author; ICML 2026 Spotlight. Achieved 1.5--3.6$\times$ serving and 1.8--3.9$\times$ RL rollout throughput on 8$\times$H100.}\\
+&\\[-5pt]
+\raggedleft \textbf{Research Intern} & \textbf{Zhejiang University}\\
+\raggedleft Aug. 2023 -- Jul. 2025 & Machine Learning, Hangzhou, China\\
+& \textcolor{gray}{AuroraLong: first-author work on efficient hour-long video understanding (ICCV 2025), with 8.13$\times$ faster inference on RTX 3090. Video-MMLU: benchmark evaluating 90+ video LLMs; ICCV workshop Outstanding Paper Award and Oral Presentation.}\\
+\end{tabular}
+
+\sepspace
+\section*{Teaching}
+\begin{tabular}{p{3.7cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}>{\raggedright\arraybackslash}p{12.0cm}}
+\raggedleft \textbf{Teaching Assistant} & \textbf{ZJU--UIUC Institute}\\
+\raggedleft\small Aug. 2024 -- May 2025 & ECE 220 Computer Systems \& Programming (Spring 2025)\\
+& ECE 120 Introduction to Computing (Fall 2024)\\
+\end{tabular}
+
+\newpage
+\section*{Selected Publications}
+The~\eq~sign denotes equal contribution. The~\lead~sign denotes project lead. Paper titles link to the corresponding publications.
+
+\subsection*{Preprints and Technical Reports}
+\begin{enumerate}[itemsep=10pt]
+\paper{https://inference-rsi.com/}{P3}{Hao Kang\eq, \weili\eq, Ziyang Li\eq, Zheng Du\eq, Hanchen Li, Tian Xia, Song Bian, Tushar Krishna, Huizi Mao, Ion Stoica, and Song Han}{Evolving Infra: Agent-Adaptive LLM Serving at Scale}{Technical report, arXiv:2611.12304}{2026}
+\paper{https://flashstates.ai/}{P2}{Chenxi Li\eq, \weili\eq\lead, Tianyi Zhang, Jue Wang, Zhongzhu Zhou, and Chenfeng Xu}{FlashStates: Unlocking Flexible Hybrid State Management for Agentic LLM Inference}{Preprint}{2026}
+\paper{https://weilixu.com/QATFactory-web/}{P1}{\weili\eq, Jisen Li\eq, Yuqing Jian\eq, Chenxi Li, Zhizhou Sha, Yifan Yu, Qingyang Wu, Chenfeng Xu, Zhongzhu Zhou, Tianyi Zhang, and Ben Athiwaratkun}{QATFactory: A Versatile, Deployment-Aligned Framework for Quantization-aware Training and Distillation of LLMs}{Preprint, arXiv:2609.39223}{2026}
+\end{enumerate}
+
+\subsection*{Peer-Reviewed Papers}
+\begin{enumerate}[itemsep=10pt]
+\paper{https://thunderagent.ai/}{C2}{Hao Kang\eq, Ziyang Li\eq, \weili\eq, Xinyu Yang\eq, Yinfang Chen, Junxiong Wang, Beidi Chen, Tushar Krishna, Chenfeng Xu, and Simran Arora}{ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System}{International Conference on Machine Learning (ICML), \textbf{Spotlight}}{2026}
+\paper{https://arxiv.org/abs/2507.02591}{C1}{\weili\eq, Enxin Song\eq, Wenhao Chai\lead, Xuexiang Wen, Tian Ye, and Gaoang Wang}{Bringing RNNs Back to Efficient Open-Ended Video Understanding}{International Conference on Computer Vision (ICCV)}{2025}
+\end{enumerate}
+
+
+
+
+
+\sepspace
+\section*{Open-Source Contributions}
+\begin{tabular}{p{3.7cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}>{\raggedright\arraybackslash}p{12.0cm}}
+\raggedleft \textbf{Contributor} & \textbf{\href{https://github.com/NVIDIA/TileGym/commits?author=Weili-0234}{TileGym (NVIDIA's cuTile Kernel Library)}}\\
+\raggedleft Dec. 2025 -- Jun. 2026 & \textcolor{gray}{Implemented backward-pass FlashAttention and SwiGLU kernels in cuTile, with correctness tests and benchmarking; achieved $>$10\% higher throughput than the optimized Triton baseline.}\\
+\end{tabular}
+
+\sepspace
+\section*{Technical Skills}
+\begin{itemize}[leftmargin=0pt,label={},itemsep=4pt]
+\item \textbf{Programming:} Python, C/C++, Triton, CUDA, cuTile, Java, RISC-V Assembly.
+\item \textbf{Frameworks and systems:} PyTorch, vLLM, SGLang, TensorRT-LLM, Dynamo, NIXL, Mooncake, slime, Megatron-LM.
+\item \textbf{Tools:} Git, Linux/UNIX, Slurm, Kubernetes, Docker, GDB, PDB, Nsight Systems, Nsight Compute.
+\end{itemize}
+\end{document}
