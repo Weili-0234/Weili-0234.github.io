@@ -1,51 +1,119 @@
-"song":
-  - firstname: ["Enxin"]
-    url: https://enxinsong.com/
-
-"xie":
-  - firstname: ["Jianwen"]
-    url: https://www.stat.ucla.edu/~jxie/
-
-"ye":
-  - firstname: ["Tian"]
-    url: https://owen718.github.io
-
-"chai":
-  - firstname: ["Wenhao"]
-    url: https://wenhaochai.com/
-
-"kang":
-  - firstname: ["Hao"]
-    url: https://haokang-timmy.github.io
-
-"yang":
-  - firstname: ["Xinyu"]
-    url: https://xinyuyang.me
-
-"chen":
-  - firstname: ["Yinfang"]
-    url: https://yinfangchen.github.io
-  - firstname: ["Beidi"]
-    url: https://www.andrew.cmu.edu/user/beidic/
-
-"wang":
-  - firstname: ["Gaoang"]
-    url: https://cvnext.github.io
-  - firstname: ["Junxiong"]
-    url: https://jxiw.github.io
-
-"krishna":
-  - firstname: ["Tushar"]
-    url: https://tusharkrishna.ece.gatech.edu
-
-"li":
-  - firstname: ["Ziyang"]
-    url: https://ergt10.github.io/
-
-"xu":
-  - firstname: ["Chenfeng"]
-    url: https://www.chenfengx.com
-
-"arora":
-  - firstname: ["Simran"]
-    url: https://arorasimran.com
+---
+song:
+- firstname:
+  - Enxin
+  url: https://enxinsong.com/
+xie:
+- firstname:
+  - Jianwen
+  url: https://www.stat.ucla.edu/~jxie/
+ye:
+- firstname:
+  - Tian
+  url: https://owen718.github.io
+chai:
+- firstname:
+  - Wenhao
+  url: https://wenhaochai.com/
+kang:
+- firstname:
+  - Hao
+  url: https://haokang-timmy.github.io
+yang:
+- firstname:
+  - Xinyu
+  url: https://xinyuyang.me
+chen:
+- firstname:
+  - Yinfang
+  url: https://yinfangchen.github.io
+- firstname:
+  - Beidi
+  url: https://www.andrew.cmu.edu/user/beidic/
+wang:
+- firstname:
+  - Gaoang
+  url: https://cvnext.github.io
+- firstname:
+  - Junxiong
+  url: https://jxiw.github.io
+- firstname:
+  - Jue
+  url: https://juewang.me/about/
+krishna:
+- firstname:
+  - Tushar
+  url: https://tushar-krishna.github.io/
+li:
+- firstname:
+  - Ziyang
+  url: https://ergt10.github.io/
+- firstname:
+  - Hanchen
+  url: https://hanchenli.github.io/
+- firstname:
+  - Jisen
+  url: https://jisenli.me/
+- firstname:
+  - Chenxi
+  url: https://github.com/connorLi96
+xu:
+- firstname:
+  - Chenfeng
+  url: https://www.chenfengx.com
+arora:
+- firstname:
+  - Simran
+  url: https://arorasimran.com
+du:
+- firstname:
+  - Zheng
+  url: https://crmsndu.github.io/
+xia:
+- firstname:
+  - Tian
+  url: https://www.tianxia.me/
+bian:
+- firstname:
+  - Song
+  url: https://waterpine.github.io/
+mao:
+- firstname:
+  - Huizi
+  url: https://ralphmao.github.io/
+stoica:
+- firstname:
+  - Ion
+  url: https://people.eecs.berkeley.edu/~istoica/
+han:
+- firstname:
+  - Song
+  url: https://hanlab.mit.edu/songhan
+jian:
+- firstname:
+  - Yuqing
+  url: https://jianyq.github.io/
+sha:
+- firstname:
+  - Zhizhou
+  url: https://jamessand.github.io/
+yu:
+- firstname:
+  - Yifan
+  url: https://yifan1130.github.io/
+wu:
+- firstname:
+  - Qingyang
+  url: https://qywu.github.io/
+zhou:
+- firstname:
+  - Zhongzhu
+  url: https://www.zhongzhuzhou.org/
+zhang:
+- firstname:
+  - Tianyi
+  url: https://tonyzhang617.github.io/
+athiwaratkun:
+- firstname:
+  - Ben
+  url: https://benathi.github.io/

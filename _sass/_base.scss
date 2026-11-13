@@ -697,6 +697,11 @@ footer.sticky-bottom {
 .publications {
   margin-top: 2rem;
 
+  .author-name {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
   h1 {
     color: var(--global-theme-color);
     font-size: 2rem;
