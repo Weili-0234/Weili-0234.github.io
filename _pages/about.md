@@ -27,10 +27,14 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-Seeking research opportunities in MLsys <br>
+**I am seeking Ph.D. opportunities in machine learning systems (MLSys) starting in Fall 2027.** <br>
 Check out my CV <a href="./assets/pdf/weili_resume.pdf">here</a>
 
-I am a research intern at <a href="https://www.together.ai/">Together AI</a>, as well as a rising senior undergraduate in Computer Engineering. I'm currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
+I am a senior undergraduate in Computer Engineering, currently pursuing a dual degree from <a href="https://illinois.edu">University of Illinois Urbana-Champaign</a> and <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.
+
+I was a Research Intern on the Frontier Performance Team at [Together AI](https://www.together.ai/) from May to September 2026, working on LLM inference infrastructure for long-context and high-throughput agentic workloads.
+
+My recent work includes [Evolving Infra](https://inference-rsi.com/), on agent-adaptive LLM serving, and [FlashStates](https://flashstates.ai/), on hybrid state management for agentic inference.
 
 I'm interested in various aspects of machine learning and computer systems: 
 - Efficient sequence modeling algorithms with hardware-aware implementation

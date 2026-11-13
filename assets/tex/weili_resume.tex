@@ -1,0 +1,212 @@
+%-------------------------
+% Resume in Latex
+% Author
+% License : MIT
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=1.3cm, right=1.2cm, bottom=1.3cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+
+\newcommand{\entry}[4]{\textbf{#1}\hfill #2\\\textit{#3}\hfill\textit{#4}\par\vspace{3pt}}
+\newcommand{\pub}[4]{\item \textbf{\href{#1}{#2}}\\#3\\\textit{#4}}
+\begin{document}
+\fontfamily{cmr}\selectfont
+\begin{center}
+{\LARGE\textbf{Weili Xu}}\\[5pt]
+\href{mailto:weilixu2@illinois.edu}{weilixu2@illinois.edu} \quad|\quad
+\href{https://weili-0234.github.io/}{weili-0234.github.io} \quad|\quad
+\href{https://github.com/Weili-0234}{GitHub: Weili-0234}\\[3pt]
+Department of Electrical \& Computer Engineering, University of Illinois Urbana-Champaign
+\end{center}
+\section{\textbf{Research Profile}}
+Senior undergraduate in Computer Engineering in the UIUC--Zhejiang University dual-degree program.
+\textbf{Seeking Ph.D. opportunities in machine learning systems (MLSys) starting in Fall 2027.}
+Research interests: agentic LLM serving, hardware-aware sequence modeling, and efficient long-context multimodal systems.
+
+\section{\textbf{Education}}
+\entry{University of Illinois Urbana-Champaign}{Aug. 2023 -- Present}{B.S. in Computer Engineering; GPA: 3.97/4.00}{Urbana, IL}
+\entry{Zhejiang University}{Aug. 2023 -- Present}{B.S. in Computer Engineering (Dual Degree); GPA: 4.20/4.30}{Hangzhou, China}
+\small Selected coursework (all A/A+): ECE 408 Applied Parallel Programming; ECE 391 Computer Systems Engineering.\normalsize
+
+\section{\textbf{Research and Industry Experience}}
+\entry{Together AI}{May 2026 -- Sep. 2026}{Research Intern, Frontier Performance Team}{San Francisco, CA}
+\resumeItemListStart
+\item Optimized LLM inference infrastructure for long-context and high-throughput agentic workloads.
+\resumeItemListEnd
+\vspace{5pt}
+\entry{University of Illinois Urbana-Champaign}{Aug. 2025 -- Present}{Research Intern in Machine Learning Systems}{Urbana, IL}
+\resumeItemListStart
+\item \textbf{ThunderAgent (co-first author; ICML 2026 Spotlight):} developed program-aware scheduling for agentic inference, addressing KV-cache thrashing and cross-node memory imbalance.
+\item Achieved 1.5--3.6$\times$ serving throughput and 1.8--3.9$\times$ RL rollout throughput on agentic workloads on an 8$\times$H100 node.
+\resumeItemListEnd
+\vspace{5pt}
+\entry{Zhejiang University}{Aug. 2023 -- Jul. 2025}{Research Intern in Machine Learning}{Hangzhou, China}
+\resumeItemListStart
+\item \textbf{AuroraLong (first author; ICCV 2025):} developed linear-RNN-based multimodal modeling for hour-long video understanding; achieved 8.13$\times$ faster inference on an RTX 3090 GPU.
+\item \textbf{Video-MMLU (ICCV Workshops 2025):} developed a multi-discipline lecture-understanding benchmark evaluating 90+ video LLMs; Outstanding Paper Award and Oral Presentation at the Knowledge-Intensive Multimodal Reasoning Workshop.
+\resumeItemListEnd
+
+\section{\textbf{Open-Source Contributions}}
+\entry{\href{https://github.com/NVIDIA/TileGym/commits?author=Weili-0234}{TileGym (NVIDIA's cuTile Kernel Library)}}{Dec. 2025 -- Jun. 2026}{Open-Source Code Contributor}{Remote}
+\resumeItemListStart
+\item Implemented backward-pass FlashAttention and SwiGLU kernels in cuTile with numerical correctness tests and benchmarking; achieved $>$10\% higher throughput than the optimized Triton baseline.
+\resumeItemListEnd
+
+\section{\textbf{Teaching}}
+\textbf{Zhejiang University--University of Illinois Urbana-Champaign Institute}\\
+Undergraduate Teaching Assistant \hfill Aug. 2024 -- May 2025\\
+\small ECE 220 Computer Systems \& Programming (Spring 2025); ECE 120 Introduction to Computing (Fall 2024).\normalsize
+
+\newpage
+\begin{center}{\large\textbf{Weili Xu}}\quad |\quad Publications and Technical Skills\end{center}
+\section{\textbf{Publications}}
+\small $^*$ Equal contribution. $^\dagger$ Project lead.
+\begin{enumerate}[leftmargin=1.5em,itemsep=12pt,parsep=2pt]
+\pub{https://inference-rsi.com/}{Evolving Infra: Agent-Adaptive LLM Serving at Scale}
+{Hao Kang$^*$, \textbf{Weili Xu}$^*$, Ziyang Li$^*$, Zheng Du$^*$, Hanchen Li, Tian Xia, Song Bian, Tushar Krishna, Huizi Mao, Ion Stoica, Song Han.}
+{Technical report, 2026. arXiv:2611.12304.}
+\pub{https://flashstates.ai/}{FlashStates: Unlocking Flexible Hybrid State Management for Agentic LLM Inference}
+{Chenxi Li$^*$, \textbf{Weili Xu}$^{*,\dagger}$, Tianyi Zhang, Jue Wang, Zhongzhu Zhou, Chenfeng Xu.}
+{Preprint, 2026.}
+\pub{https://thunderagent.ai/}{ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System}
+{Hao Kang$^*$, Ziyang Li$^*$, \textbf{Weili Xu}$^*$, Xinyu Yang$^*$, Yinfang Chen, Junxiong Wang, Beidi Chen, Tushar Krishna, Chenfeng Xu, Simran Arora.}
+{ICML 2026, Spotlight.}
+\pub{https://arxiv.org/abs/2507.02591}{Bringing RNNs Back to Efficient Open-Ended Video Understanding}
+{\textbf{Weili Xu}, Enxin Song, Wenhao Chai, Xuexiang Wen, Tian Ye, Gaoang Wang.}
+{ICCV 2025, pp. 23453--23465.}
+\pub{https://arxiv.org/abs/2504.14693}{Video-MMLU: A Massive Multi-Discipline Lecture Understanding Benchmark}
+{Enxin Song, Wenhao Chai, \textbf{Weili Xu}, Jianwen Xie, Yuxuan Liu, Gaoang Wang.}
+{ICCV Workshops 2025, pp. 6099--6113.}
+\end{enumerate}
+\normalsize
+\section{\textbf{Recent Research}}
+\textbf{\href{https://inference-rsi.com/}{Evolving Infra}} --- Co-first author. Agent-adaptive LLM serving that decouples compute allocation from KV-cache management, enabling online prefill/decode adaptation while retaining reusable agent context.\\[8pt]
+\textbf{\href{https://flashstates.ai/}{FlashStates}} --- Co-first author and project lead. Flexible hybrid state management combining arbitrary recurrent-state checkpointing, dependency-aware KV/state management, and cost-aware eviction for agentic inference.
+
+\section{\textbf{Technical Skills}}
+\begin{itemize}[leftmargin=0pt,label={},itemsep=5pt]
+\item \textbf{Programming:} Python, C/C++, Triton, CUDA, cuTile, Java, RISC-V Assembly.
+\item \textbf{Frameworks and systems:} PyTorch, vLLM, SGLang, TensorRT-LLM, Dynamo, NIXL, Mooncake, slime, Megatron-LM.
+\item \textbf{Tools:} Git, Linux/UNIX, Slurm, Kubernetes, Docker, GDB, PDB, Nsight Systems, Nsight Compute.
+\end{itemize}
+\end{document}
