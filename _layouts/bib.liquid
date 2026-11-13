@@ -93,7 +93,7 @@
             {{- author.first }} {{ author_last_html -}}
           {%- endif -%}
           {%- unless forloop.last -%},{%- endunless -%}
-        </span>{% unless forloop.last %} {% endunless %}
+        </span>{% unless forloop.last %}&#32;{% endunless %}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
 
