@@ -34,7 +34,7 @@ I am a senior undergraduate in Computer Engineering, currently pursuing a dual d
 
 I was a Research Intern on the Frontier Performance Team at [Together AI](https://www.together.ai/) from May to September 2026, working on LLM inference infrastructure for long-context and high-throughput agentic workloads.
 
-My recent work includes [Evolving Infra](https://inference-rsi.com/), on agent-adaptive LLM serving, and [FlashStates](https://flashstates.ai/), on hybrid state management for agentic inference.
+My recent work includes [Evolving Infra](https://inference-rsi.com/), on agent-adaptive LLM serving; [FlashStates](https://flashstates.ai/), on hybrid state management for agentic inference; and [QATFactory](https://weilixu.com/QATFactory-web/), on deployment-aligned quantization-aware training and distillation.
 
 I'm interested in various aspects of machine learning and computer systems: 
 - Efficient sequence modeling algorithms with hardware-aware implementation

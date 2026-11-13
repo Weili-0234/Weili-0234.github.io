@@ -49,7 +49,7 @@
 
 \newcommand{\link}[2]{~\textcolor{linkpink}{\href{#1}{\textbf{#2}}}}
 
-\newcommand{\paper}[6]{\item[\textcolor{linkpink}{\href{#1}{\textbf{#2}}}]#3.~\textcolor{gray}{#4.}~\textit{#5},~#6.}
+\newcommand{\paper}[6]{\item[#2]#3.~\textcolor{linkpink}{\href{#1}{#4.}}~\textit{#5},~#6.}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -107,7 +107,7 @@ My research focuses on agentic LLM serving, hardware-aware sequence modeling, an
 \begin{tabular}{p{3.7cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}>{\raggedright\arraybackslash}p{12.0cm}}
 \raggedleft \textbf{Research Intern} & \textbf{Together AI}\\
 \raggedleft May -- Sep. 2026 & Frontier Performance Team, San Francisco, CA\\
-& \textcolor{gray}{Optimized LLM inference infrastructure for long-context and high-throughput agentic workloads.}\\
+& \textcolor{gray}{QATFactory (co-first author): deployment-aligned quantization-aware training and distillation of LLMs.}\\
 &\\[-5pt]
 \raggedleft \textbf{Research Intern} & \textbf{University of Illinois Urbana-Champaign}\\
 \raggedleft Aug. 2025 -- Present & Machine Learning Systems, Urbana, IL\\
@@ -128,7 +128,7 @@ My research focuses on agentic LLM serving, hardware-aware sequence modeling, an
 
 \newpage
 \section*{Selected Publications}
-The~\eq~sign denotes equal contribution. The~\lead~sign denotes project lead. \textcolor{linkpink}{\textbf{Index}} with link.
+The~\eq~sign denotes equal contribution. The~\lead~sign denotes project lead. Paper titles link to the corresponding publications.
 
 \subsection*{Peer-Reviewed Papers}
 \begin{enumerate}[itemsep=10pt]
@@ -143,8 +143,9 @@ The~\eq~sign denotes equal contribution. The~\lead~sign denotes project lead. \t
 
 \subsection*{Preprints and Technical Reports}
 \begin{enumerate}[itemsep=10pt]
-\paper{https://inference-rsi.com/}{P2}{Hao Kang\eq, \weili\eq, Ziyang Li\eq, Zheng Du\eq, Hanchen Li, Tian Xia, Song Bian, Tushar Krishna, Huizi Mao, Ion Stoica, and Song Han}{Evolving Infra: Agent-Adaptive LLM Serving at Scale}{Technical report, arXiv:2611.12304}{2026}
-\paper{https://flashstates.ai/}{P1}{Chenxi Li\eq, \weili\eq\lead, Tianyi Zhang, Jue Wang, Zhongzhu Zhou, and Chenfeng Xu}{FlashStates: Unlocking Flexible Hybrid State Management for Agentic LLM Inference}{Preprint}{2026}
+\paper{https://inference-rsi.com/}{P3}{Hao Kang\eq, \weili\eq, Ziyang Li\eq, Zheng Du\eq, Hanchen Li, Tian Xia, Song Bian, Tushar Krishna, Huizi Mao, Ion Stoica, and Song Han}{Evolving Infra: Agent-Adaptive LLM Serving at Scale}{Technical report, arXiv:2611.12304}{2026}
+\paper{https://flashstates.ai/}{P2}{Chenxi Li\eq, \weili\eq\lead, Tianyi Zhang, Jue Wang, Zhongzhu Zhou, and Chenfeng Xu}{FlashStates: Unlocking Flexible Hybrid State Management for Agentic LLM Inference}{Preprint}{2026}
+\paper{https://weilixu.com/QATFactory-web/}{P1}{\weili\eq, Jisen Li\eq, Yuqing Jian\eq, Chenxi Li, Zhizhou Sha, Yifan Yu, Qingyang Wu, Chenfeng Xu, Zhongzhu Zhou, Tianyi Zhang, and Ben Athiwaratkun}{QATFactory: A Versatile, Deployment-Aligned Framework for Quantization-aware Training and Distillation of LLMs}{Preprint, arXiv:2609.39223}{2026}
 \end{enumerate}
 
 \sepspace
