@@ -85,13 +85,6 @@ ninja.data = [{
           title: 'ThunderAgent is accepted as a Spotlight paper at ICML 2026 and is integrated...',
           description: "",
           section: "News",},{
-        id: 'social-discord',
-        title: 'Discord',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://discord.com/users/particle34", "_blank");
-        },
-      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
