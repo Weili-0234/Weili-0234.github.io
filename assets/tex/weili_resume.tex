@@ -62,6 +62,7 @@
 \setlist[enumerate]{before=\raggedright}
 \newenvironment{cvtable}{\par\noindent\begin{tabular}{@{}>{\raggedleft\arraybackslash}p{3.7cm}@{\hspace{1.2em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1.2em}}>{\raggedright\arraybackslash}p{12.0cm}@{}}}{\end{tabular}\par}
 \usepackage[protrusion=false,expansion=false,tracking=true]{microtype}\SetTracking{encoding=*}{-10}
+\newcommand{\repostars}[1]{\mbox{\small\color{black!60}(#1 stars)}}
 \begin{document}
 \begin{center}
     \Large{\textbf{\textsc{Weili Xu}}}
@@ -141,9 +142,9 @@ The~\eq~sign denotes equal contribution. The~\lead~sign denotes project lead. Pa
 
 \subsection*{Peer-Reviewed Papers}
 \begin{enumerate}[itemsep=10pt]
-\paper{https://thunderagent.ai/}{C2}{Hao Kang\eq, Ziyang Li\eq, \weili\eq, Xinyu Yang\eq, Yinfang Chen, Junxiong Wang, Beidi Chen, Tushar Krishna, Chenfeng Xu, and Simran Arora}{ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System}{International Conference on Machine Learning (ICML), \textbf{Spotlight}}{2026}
+\paper{https://thunderagent.ai/}{C2}{Hao Kang\eq, Ziyang Li\eq, \weili\eq, Xinyu Yang\eq, Yinfang Chen, Junxiong Wang, Beidi Chen, Tushar Krishna, Chenfeng Xu, and Simran Arora}{ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System}{International Conference on Machine Learning (ICML), \textbf{\textup{Spotlight}}}{2026}
 \paper{https://arxiv.org/abs/2507.02591}{C1}{\weili\eq, Enxin Song\eq, Wenhao Chai\lead, Xuexiang Wen, Tian Ye, and Gaoang Wang}{Bringing RNNs Back to Efficient Open-Ended Video Understanding}{International Conference on Computer Vision (ICCV)}{2025}
-\paper{https://enxinsong.com/Video-MMLU-web/}{W1}{Enxin Song, Wenhao Chai, \weili, Jianwen Xie, Yuxuan Liu, and Gaoang Wang}{Video-MMLU: A Massive Multi-Discipline Lecture Understanding Benchmark}{International Conference on Computer Vision (ICCV), Knowledge-Intensive Multimodal Reasoning Workshop, \textbf{Outstanding Paper Award}}{2025}
+\paper{https://enxinsong.com/Video-MMLU-web/}{W1}{Enxin Song, Wenhao Chai, \weili, Jianwen Xie, Yuxuan Liu, and Gaoang Wang}{Video-MMLU: A Massive Multi-Discipline Lecture Understanding Benchmark}{International Conference on Computer Vision (ICCV), Knowledge-Intensive Multimodal Reasoning Workshop, \textbf{\textup{Outstanding Paper Award}}}{2025}
 \end{enumerate}
 
 
@@ -151,12 +152,12 @@ The~\eq~sign denotes equal contribution. The~\lead~sign denotes project lead. Pa
 
 
 \sepspace
-\section*{Research Adoption and Open-Source Contributions}
+\section*{Research Adoption and Open Source}
 \begingroup\raggedright
 \begin{itemize}[leftmargin=0pt,label={},itemsep=6pt]
-\item \textbf{ThunderAgent:} Integrated into \adoptionlink{https://docs.nvidia.com/dynamo/agents/thunder-agent-program-scheduler}{NVIDIA Dynamo}, with training recipes in \adoptionlink{https://github.com/skyrl-project/SkyRL/blob/main/examples/train/thunder_agent/README.md}{AnyScale~SkyRL} and \adoptionlink{https://github.com/verl-project/verl-recipe/blob/main/dynamo/THUNDERAGENT_VLLM024.md}{ByteDance~verl}; used in \adoptionlink{https://www.together.ai/blog/thunderagent}{\mbox{Together AI's} production stack}.
-\item \textbf{FlashStates:} Cache-management policy adopted in \adoptionlink{https://github.com/sgl-project/sglang/pull/50122}{SGLang}; upstreaming to \adoptionlink{https://github.com/vllm-project/vllm/issues/68762}{vLLM}.
-\item \textbf{NVIDIA TileGym:} Contributed cuTile kernels for \adoptionlink{https://github.com/NVIDIA/TileGym/pull/46}{SwiGLU}, \adoptionlink{https://github.com/NVIDIA/TileGym/pull/49}{FlashAttention}, and \adoptionlink{https://github.com/NVIDIA/TileGym/pull/91}{DeepSeek sparse MLA}.
+\item \textbf{ThunderAgent}~\repostars{500+}: Integrated into \adoptionlink{https://docs.nvidia.com/dynamo/agents/thunder-agent-program-scheduler}{NVIDIA Dynamo}~\repostars{8.5k+}, with training recipes in \adoptionlink{https://github.com/skyrl-project/SkyRL/blob/main/examples/train/thunder_agent/README.md}{AnyScale~SkyRL}~\repostars{2.5k+} and \adoptionlink{https://github.com/verl-project/verl-recipe/blob/main/dynamo/THUNDERAGENT_VLLM024.md}{ByteDance~verl}~\repostars{24k+}; used in \adoptionlink{https://www.together.ai/blog/thunderagent}{Together~AI}'s production stack.
+\item \textbf{FlashStates}~\repostars{300+}: Partly adopted in \adoptionlink{https://github.com/sgl-project/sglang/pull/50122}{SGLang}~\repostars{39k+}; upstreaming to \adoptionlink{https://github.com/vllm-project/vllm/issues/68762}{vLLM}~\repostars{97k+}.
+\item {\lsstyle \textbf{NVIDIA TileGym}~\repostars{800+}: Contributed \adoptionlink{https://github.com/NVIDIA/TileGym/pull/46}{SwiGLU}, \adoptionlink{https://github.com/NVIDIA/TileGym/pull/49}{FlashAttention}, and \adoptionlink{https://github.com/NVIDIA/TileGym/pull/91}{DSA} kernels in cuTile DSL.\par}
 \end{itemize}
 \endgroup
 
